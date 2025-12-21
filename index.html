@@ -47,6 +47,8 @@
 
         .nav-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .nav-item {
@@ -228,6 +230,7 @@
             justify-content: center;
             gap: 20px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -239,11 +242,28 @@
         .footer-links a:hover {
             color: #fff;
         }
+        
+        .cv-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #444;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .cv-link:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
 
         .ai-credit {
             font-size: 0.8rem;
             opacity: 0.5;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         /* BOTÓN VOLVER ARRIBA */
@@ -461,6 +481,9 @@
                 <a href="https://www.linkedin.com/in/yyyi" target="_blank">LinkedIn</a>
                 <a href="https://www.behance.net/yyyi" target="_blank">Behance</a>
             </div>
+            
+            <a href="https://yyyi-creativa.github.io/CV_2026/" target="_blank" class="cv-link">Ver CV Online</a>
+            
             <div class="ai-credit">
                 Sitio desarrollado con asistencia de Gemini
             </div>
@@ -474,13 +497,33 @@
     </button>
 
     <script>
+        // --- NAVEGACIÓN ACTIVA EN SCROLL ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+            
+            scrollFunction(); // Llamamos también a la función del botón
+        });
+
         // --- BOTÓN SCROLL ---
         let mybutton = document.getElementById("scrollTopBtn");
-
-        window.onscroll = function() {
-            scrollFunction();
-            highlightSidebar(); // Activamos también la función del sidebar
-        };
 
         function scrollFunction() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -493,29 +536,6 @@
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        }
-
-        // --- SIDEBAR ACTIVO ---
-        function highlightSidebar() {
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".nav-link");
-
-            let current = "";
-
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                // Ajuste para que se active antes de llegar
-                if (window.scrollY >= sectionTop - 150) { 
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href").includes(current)) {
-                    link.classList.add("active");
-                }
-            });
         }
     </script>
 
