@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosistemas Oníricos - Exploración IA</title>
+    
+    <!-- Tipografía: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #050505; /* Fondo oscuro para resaltar lo etéreo */
+            --text-color: #E0E0E0;
+            --accent-color: #888;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* HEADER PROYECTO */
+        header {
+            margin-bottom: 80px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+
+        /* SECCIONES */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+            border-left: 2px solid #fff;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #ccc;
+        }
+        li { margin-bottom: 10px; }
+
+        /* GRID DE IMÁGENES */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        .image-item img:hover { opacity: 1; }
+
+        .caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        /* VIDEO CONTAINER */
+        .video-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* TAGS DE HERRAMIENTAS */
+        .tools {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .tool-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #444;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .video-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        
+        <header>
+            <h1>Ecosistemas Oníricos</h1>
+            <p class="subtitle">Exploración de Entornos 3D y Animación con IA Generativa</p>
+            <div class="tools">
+                <span class="tool-tag">Gemini (Veo 3)</span>
+                <span class="tool-tag">Recraft</span>
+                <span class="tool-tag">KREA AI</span>
+                <span class="tool-tag">Envato (AI VideoGen)</span>
+                <span class="tool-tag">Fotografía</span>
+            </div>
+        </header>
+
+        <!-- 1. INTRODUCCIÓN -->
+        <section>
+            <h2>El Desafío Creativo</h2>
+            <p>Este proyecto nace de la inquietud por fusionar lo tangible con lo digital. El objetivo fue crear una serie de piezas audiovisuales que evocaran una atmósfera etérea y mágica, integrando la materialidad de la artesanía tradicional con las posibilidades infinitas de la generación de entornos mediante IA.</p>
+            <p><strong>La Premisa:</strong> Unir la fotografía de una pieza física (modelada en cera) con un entorno 3D digital, logrando una cohesión estética perfecta en cuanto a iluminación, textura y movimiento.</p>
+        </section>
+
+        <!-- 2. PROCESO -->
+        <section>
+            <h2>De la Cera al Pixel</h2>
+            <p>El punto de partida fue la creación de dos activos fundamentales:</p>
+            <ul>
+                <li><strong>La Pieza Física:</strong> Fotografía de estudio de una joya original modelada en cera, capturando su textura y volumen real.</li>
+                <li><strong>El Entorno Digital:</strong> Creación de un escenario base en 3D, diseñado para servir como el lienzo atmosférico de la composición.</li>
+            </ul>
+            <p>El desafío central fue la integración. Mediante técnicas de composición digital, uní ambos elementos buscando una estética específica: etérea, mágica, con un toque de oscuridad angelical.</p>
+            
+            <!-- Aquí irían tus imágenes del proceso (Foto Cera + Fondo 3D) -->
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="https://placehold.co/600x400/222/555?text=Foto+Pieza+Cera" alt="Pieza modelada en cera">
+                    <div class="caption">Asset 1: Pieza Física (Cera)</div>
+                </div>
+                <div class="image-item">
+                    <img src="https://placehold.co/600x400/222/555?text=Entorno+3D+Base" alt="Entorno 3D">
+                    <div class="caption">Asset 2: Entorno 3D Base</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EXPLORACIÓN IA -->
+        <section>
+            <h2>Exploración Generativa</h2>
+            <p>Utilizando <strong>Gemini</strong> como asistente de <em>Prompt Engineering</em>, desarrollé descripciones técnicas precisas para guiar la generación de imágenes y variaciones de fondo en herramientas como <strong>Recraft</strong> y <strong>KREA</strong>.</p>
+            <p>El objetivo fue explorar paletas de colores y atmósferas que transitaran desde lo luminoso y celestial hasta lo misterioso y nocturno, manteniendo siempre la coherencia con la marca.</p>
+
+            <!-- Aquí irían tus resultados de Krea/Recraft -->
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="https://placehold.co/400x600/111/444?text=Exploraci%C3%B3n+KREA" alt="Generación KREA">
+                    <div class="caption">Variación de Fondo (KREA AI)</div>
+                </div>
+                <div class="image-item">
+                    <img src="https://placehold.co/400x600/111/444?text=Exploraci%C3%B3n+Recraft" alt="Generación Recraft">
+                    <div class="caption">Variación de Fondo (Recraft)</div>
+                </div>
+                <div class="image-item">
+                    <img src="https://placehold.co/400x600/111/444?text=Exploraci%C3%B3n+Gemini" alt="Generación Gemini">
+                    <div class="caption">Variación de Fondo (Gemini)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ANIMACIÓN FINAL -->
+        <section>
+            <h2>Resultados Animados</h2>
+            <p>La etapa final consistió en dotar de movimiento a estas composiciones para potenciar la sensación onírica. Se utilizaron flujos distintos para cada formato:</p>
+            
+            <div class="video-container">
+                <!-- Video Vertical -->
+                <div class="video-wrapper" style="max-width: 350px;">
+                    <!-- Reemplaza src con tu video vertical -->
+                    <video controls poster="https://placehold.co/350x620/000/fff?text=Poster+Vertical">
+                        <source src="tu-video-vertical.mp4" type="video/mp4">
+                        Tu navegador no soporta video.
+                    </video>
+                    <div class="caption">Formato 9:16 (Animado con AI VideoGen Beta de Envato)</div>
+                </div>
+
+                <!-- Video Horizontal -->
+                <div class="video-wrapper">
+                    <!-- Reemplaza src con tu video horizontal -->
+                    <video controls poster="https://placehold.co/600x340/000/fff?text=Poster+Horizontal">
+                        <source src="tu-video-horizontal.mp4" type="video/mp4">
+                        Tu navegador no soporta video.
+                    </video>
+                    <div class="caption">Formato 16:9 (Animado con Gemini Veo 3)</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
