@@ -3,317 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CV de Yi Saint-Jour. Creative Project Lead y Diseñadora Multidisciplinaria con visión 360°. Gestión estratégica y ejecución técnica.">
-    <title>CV - Yi Saint-Jour</title>
+    <title>Ecosistemas Oníricos - Exploración IA</title>
     
     <!-- Tipografía: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Estilo Editorial / Martin Lorenz */
-            --bg-color: #FFFFFF;
-            --text-color: #111111;
-            --accent-color: #555555; 
-            --line-color: #000000; /* Líneas negras sólidas */
-            --font-main: 'Inter', Helvetica, Arial, sans-serif;
-            --max-width: 900px;
-            --sidebar-width: 180px; /* Ancho de la barra lateral */
+            --bg-color: #050505; /* Fondo oscuro para resaltar lo etéreo */
+            --text-color: #E0E0E0;
+            --accent-color: #888;
+            --font-main: 'Inter', sans-serif;
+            --sidebar-width: 250px;
         }
 
-        /* RESET */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-main);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            padding: 0; /* Quitamos padding global para manejar layout */
+            line-height: 1.6;
+            margin: 0;
+            display: flex; /* Layout principal con flexbox */
         }
 
-        /* LAYOUT PRINCIPAL CON SIDEBAR */
-        .page-wrapper {
-            display: grid;
-            grid-template-columns: var(--sidebar-width) 1fr; /* Sidebar fija | Contenido */
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: 100vh;
-        }
-
-        /* BARRA LATERAL (NUEVO) */
+        /* --- BARRA LATERAL (SIDEBAR) --- */
         .sidebar {
-            padding: 40px 20px;
+            width: var(--sidebar-width);
+            height: 100vh;
             position: sticky;
             top: 0;
-            height: 100vh;
+            background-color: #0a0a0a;
+            border-right: 1px solid #333;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centrado vertical */
-            border-right: 1px solid #eee; /* Línea sutil separadora opcional */
+            justify-content: center;
         }
 
-        .toc-list {
+        .nav-list {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
         }
 
-        .toc-link {
+        .nav-item {
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
             text-decoration: none;
             color: var(--accent-color);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s, font-weight 0.3s;
-            position: relative;
-            padding-left: 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s, padding-left 0.3s;
+            display: block;
             border-left: 2px solid transparent;
+            padding-left: 10px;
         }
 
-        .toc-link:hover {
-            color: var(--text-color);
+        .nav-link:hover {
+            color: #fff;
+            padding-left: 15px;
         }
 
-        /* Estado Activo (JS) */
-        .toc-link.active {
-            color: var(--text-color);
+        .nav-link.active {
+            color: #fff;
+            border-left: 2px solid #fff;
+            padding-left: 15px;
             font-weight: 600;
-            border-left-color: var(--text-color); /* Indicador visual */
         }
 
-        /* CONTENIDO PRINCIPAL */
+
+        /* --- CONTENIDO PRINCIPAL --- */
         main {
-            padding: 40px 60px; /* Espacio interno del contenido */
-            max-width: 900px; /* Ancho máximo de lectura */
+            flex: 1; /* Ocupa el resto del espacio */
+            padding: 60px 40px;
+            max-width: 1000px; /* Ancho máximo del contenido */
+            margin: 0 auto;
         }
 
-        /* ENLACES */
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s, color 0.2s;
-        }
-        a:hover {
-            border-bottom: 1px solid var(--text-color);
-            color: #000;
-        }
-
-        /* HEADER */
+        /* HEADER PROYECTO */
         header {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
         }
 
         h1 {
             font-size: 3rem;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            line-height: 1;
+            font-weight: 300;
             margin-bottom: 10px;
-            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .role {
-            font-size: 1.1rem;
-            font-weight: 400;
+        .subtitle {
+            font-size: 1.2rem;
             color: var(--accent-color);
-            margin-bottom: 30px;
+            font-weight: 300;
         }
-
-        /* META DATA (Nav + Contacto) */
-        .header-meta {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9rem;
-            padding-top: 20px;
-            border-top: 2px solid var(--line-color);
-        }
-
-        /* Ocultamos nav superior en desktop porque ahora está en el sidebar */
-        .nav-links { display: none; } 
-
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            color: var(--accent-color);
-            flex-wrap: wrap;
-        }
-        .contact-links a { color: var(--text-color); }
 
         /* SECCIONES */
         section {
-            padding-top: 30px;
-            margin-bottom: 60px;
-            border-top: 1px solid var(--line-color);
-            scroll-margin-top: 40px;
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
+            margin-bottom: 100px; /* Más espacio entre secciones */
+            scroll-margin-top: 40px; /* Ajuste para el scroll */
         }
 
-        /* Títulos de Sección */
         h2 {
-            font-size: 0.9rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin: 0;
-            position: sticky;
-            top: 20px;
-        }
-
-        h2::before {
-            content: "✶ ";
-            color: var(--text-color);
-        }
-
-        /* Contenido */
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        /* ESTILO PERFIL */
-        .bio-text p {
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-            max-width: 95%;
-        }
-        .bio-text p:last-child { margin-bottom: 0; }
-        
-        .highlight {
-            font-weight: 500;
-            color: #000;
+            margin-bottom: 30px;
+            color: #fff;
+            border-left: 2px solid #fff;
             padding-left: 15px;
-            border-left: 3px solid var(--line-color);
         }
 
-        /* ESTILO ENTRADAS */
-        .entry {
-            display: grid;
-            grid-template-columns: 1fr 140px;
-            gap: 20px;
-        }
-
-        .entry-main h3 {
+        p {
+            margin-bottom: 20px;
+            font-weight: 300;
             font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
+            color: #ccc;
+            max-width: 800px;
         }
 
-        .institution {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            display: block;
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #ccc;
+            max-width: 800px;
+        }
+        li { margin-bottom: 10px; }
+
+        /* GRID DE IMÁGENES */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columnas fijas en escritorio */
+            gap: 20px;
+            margin-top: 40px;
         }
 
-        .description {
-            font-size: 0.95rem;
-            color: #333;
-            max-width: 95%;
-            margin-top: 10px;
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+            display: block; 
         }
-        
-        .description p { margin-bottom: 0.5rem; }
-        .description ul { padding-left: 20px; margin-bottom: 10px; }
-        .description li { margin-bottom: 5px; }
+        .image-item img:hover { opacity: 1; }
 
-        .date {
-            text-align: right;
+        /* Clase para ocupar todo el ancho (2 columnas) */
+        .span-full {
+            grid-column: 1 / -1; 
+        }
+
+        .caption {
             font-size: 0.85rem;
-            font-weight: 500;
-            font-feature-settings: "tnum";
-            white-space: pre-line; 
-            color: var(--accent-color);
+            color: #666;
+            margin-top: 8px;
+            text-align: center;
         }
 
-        /* ESTILO COMPETENCIAS CLAVE */
-        .competencies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* VIDEO CONTAINER */
+        .video-container {
+            display: flex;
             gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
         }
-        
-        .comp-category h3 {
+
+        .video-wrapper {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background-color: #000;
+        }
+
+        /* TAGS DE HERRAMIENTAS */
+        .tools {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .tool-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #444;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #666;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            margin-bottom: 15px;
+        }
+
+        .footer-name {
+            color: #fff;
             font-weight: 600;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .comp-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .comp-list li {
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-            color: var(--text-color);
-            line-height: 1.4;
-        }
-
-        /* ESTILO TOOLKIT */
-        .toolkit-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .toolkit-level {
-            margin-bottom: 10px;
-        }
-
-        .toolkit-level h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text-color);
-        }
-
-        .toolkit-desc {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--accent-color);
+            font-size: 1.1rem;
             margin-bottom: 10px;
             display: block;
         }
 
-        .tool-items {
+        .footer-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            list-style: none;
-            padding: 0;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
-        .tool-items li {
-            font-size: 0.95rem;
-            color: var(--text-color);
-            background-color: #f9f9f9;
-            padding: 5px 10px;
-            border-radius: 4px;
-            border: 1px solid #eee;
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
-        /* BOTÓN VOLVER AL INICIO */
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .ai-credit {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            margin-top: 20px;
+        }
+
+        /* BOTÓN VOLVER ARRIBA */
         #scrollTopBtn {
             display: none;
             position: fixed;
@@ -322,8 +255,8 @@
             z-index: 99;
             border: none;
             outline: none;
-            background-color: var(--text-color);
-            color: var(--bg-color);
+            background-color: #fff;
+            color: #000;
             cursor: pointer;
             padding: 0;
             border-radius: 50%;
@@ -331,17 +264,17 @@
             height: 50px;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(255,255,255,0.1);
             transition: opacity 0.3s, transform 0.3s, background-color 0.2s;
         }
 
         #scrollTopBtn:hover {
-            background-color: #333;
+            background-color: #ccc;
             transform: translateY(-3px);
         }
 
         .arrow-up {
-            border: solid var(--bg-color);
+            border: solid #000;
             border-width: 0 2px 2px 0;
             display: inline-block;
             padding: 5px;
@@ -349,66 +282,32 @@
             margin-top: 6px;
         }
 
-        /* RESPONSIVE (MÓVIL) */
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-            .page-wrapper {
-                grid-template-columns: 1fr; /* Columna única */
-            }
-            
-            .sidebar { display: none; } /* Ocultar sidebar en móvil */
-            
-            /* Mostrar nav superior en móvil */
-            .nav-links { 
-                display: flex; 
-                gap: 15px; 
-                flex-wrap: wrap; 
-                margin-bottom: 15px;
-                width: 100%;
-            }
-            .nav-links a { 
-                font-weight: 600; 
-                text-transform: uppercase; 
-                font-size: 0.8rem; 
-                color: var(--text-color); 
+            body {
+                display: block; /* En móvil quitamos el layout flex lateral */
+                padding: 0;
             }
 
-            main { padding: 30px 20px; }
-            
+            .sidebar {
+                display: none; /* Ocultamos sidebar en móvil */
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
             h1 { font-size: 2.2rem; }
             
-            section {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                padding-top: 25px;
-                margin-bottom: 50px;
-            }
-
-            h2 {
-                position: static;
-                padding-bottom: 10px;
-                border-bottom: 1px solid #eee;
-                margin-bottom: 10px;
-                color: var(--text-color);
-            }
-
-            .entry {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-
-            .entry-main { order: 2; }
-            .date { 
-                order: 1; 
-                text-align: left; 
-                margin-bottom: 5px; 
-                font-size: 0.8rem;
-                opacity: 0.8;
-            }
-
-            .bio-text p { font-size: 1.1rem; }
-            .header-meta { flex-direction: column; gap: 20px; }
-            .competencies-grid { grid-template-columns: 1fr; gap: 30px; }
+            .video-container { flex-direction: column; }
             
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            .span-full {
+                grid-column: auto;
+            }
+
             #scrollTopBtn {
                 bottom: 20px;
                 right: 20px;
@@ -420,355 +319,154 @@
 </head>
 <body>
 
-    <div class="page-wrapper">
+    <!-- SIDEBAR DE NAVEGACIÓN -->
+    <nav class="sidebar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#intro" class="nav-link">El Desafío</a></li>
+            <li class="nav-item"><a href="#proceso" class="nav-link">Proceso</a></li>
+            <li class="nav-item"><a href="#exploracion" class="nav-link">Exploración IA</a></li>
+            <li class="nav-item"><a href="#resultados" class="nav-link">Resultados</a></li>
+            <li class="nav-item"><a href="#footer" class="nav-link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
         
-        <!-- SIDEBAR IZQUIERDO (NUEVO) -->
-        <aside class="sidebar">
-            <nav>
-                <ul class="toc-list">
-                    <li><a href="#perfil" class="toc-link">Perfil</a></li>
-                    <li><a href="#competencias" class="toc-link">Competencias</a></li>
-                    <li><a href="#toolkit" class="toc-link">Toolkit</a></li>
-                    <li><a href="#experiencia" class="toc-link">Profesional</a></li>
-                    <li><a href="#docencia" class="toc-link">Docencia</a></li>
-                    <li><a href="#formacion" class="toc-link">Formación</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <header id="top">
+            <h1>Ecosistemas Oníricos</h1>
+            <p class="subtitle">Exploración de Entornos 3D y Animación con IA Generativa</p>
+            <div class="tools">
+                <span class="tool-tag">Gemini (Veo 3)</span>
+                <span class="tool-tag">Recraft</span>
+                <span class="tool-tag">KREA AI</span>
+                <span class="tool-tag">Envato (AI VideoGen)</span>
+                <span class="tool-tag">Nomad Sculpt</span>
+                <span class="tool-tag">Fotografía</span>
+            </div>
+        </header>
 
-        <!-- CONTENIDO PRINCIPAL -->
-        <main>
+        <!-- 1. INTRODUCCIÓN -->
+        <section id="intro">
+            <h2>El Desafío Creativo</h2>
+            <p>Este proyecto nace de la inquietud por fusionar lo tangible con lo digital. El objetivo fue crear una serie de piezas audiovisuales que evocaran una atmósfera etérea y mágica, integrando la materialidad de la artesanía tradicional con las posibilidades infinitas de la generación de entornos mediante IA.</p>
+            <p><strong>La Premisa:</strong> Unir la fotografía de una pieza física (modelada en cera) con un entorno 3D digital, logrando una cohesión estética perfecta en cuanto a iluminación, textura y movimiento.</p>
+        </section>
+
+        <!-- 2. PROCESO -->
+        <section id="proceso">
+            <h2>De la Cera al Pixel</h2>
+            <p>El punto de partida fue la creación de dos activos fundamentales:</p>
+            <ul>
+                <li><strong>La Pieza Física:</strong> Fotografía de estudio de una joya original modelada en cera, capturando su textura y volumen real.</li>
+                <li><strong>El Entorno Digital:</strong> Creación de un escenario base en 3D, diseñado para servir como el lienzo atmosférico de la composición.</li>
+            </ul>
+            <p>El desafío central fue la integración. Mediante técnicas de composición digital, uní ambos elementos buscando una estética específica: etérea, mágica, con un toque de oscuridad angelical.</p>
             
-            <!-- HEADER -->
-            <header id="top">
-                <h1>Yi Saint-Jour</h1>
-                <div class="role">Creative Project Lead | Diseño 360°</div>
-                
-                <div class="header-meta">
-                    <!-- Nav solo visible en móvil (CSS) -->
-                    <nav class="nav-links">
-                        <a href="#perfil">Perfil</a>
-                        <a href="#competencias">Competencias</a>
-                        <a href="#toolkit">Toolkit</a>
-                        <a href="#experiencia">Profesional</a>
-                        <a href="#docencia">Docencia</a>
-                        <a href="#formacion">Formación</a>
-                    </nav>
-                    
-                    <!-- Contacto -->
-                    <div class="contact-links">
-                        <a href="mailto:yi.creativa@gmail.com">yi.creativa@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/yyyi" target="_blank">LinkedIn</a>
-                        <a href="https://www.behance.net/yyyi" target="_blank">Behance</a>
-                        <span>Santiago, Chile</span>
-                    </div>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_4475.JPEG" alt="Pieza modelada en cera">
+                    <div class="caption">Asset 1: Pieza Física (Cera)</div>
                 </div>
-            </header>
-
-            <!-- 1. PERFIL -->
-            <section id="perfil">
-                <h2>Perfil</h2>
-                <div class="content bio-text">
-                    <p>
-                        <strong>Creative Project Lead con visión 360°.</strong> Combino la gestión estratégica con la ejecución técnica en diseño digital, fotografía y narrativa audiovisual.
-                    </p>
-                    <p>
-                        Egresada con distinción máxima como Diseñadora de la Universidad de Chile, mi metodología integra todo el proceso creativo: no solo diseño, sino que conceptualizo, dirijo y produzco.
-                    </p>
-                    <p class="highlight">
-                        Mi valor principal es la profundidad: trabajo bajo un análisis riguroso para asegurar que cada pieza —ya sea impresa o digital— no sea meramente estética, sino que responda a una coherencia narrativa y a un objetivo sólido.
-                    </p>
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_1947.png" alt="Entorno 3D">
+                    <div class="caption">Asset 2: Entorno 3D Base</div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- 2. COMPETENCIAS CLAVE -->
-            <section id="competencias">
-                <h2>Competencias Clave</h2>
-                <div class="content">
-                    <div class="competencies-grid">
-                        
-                        <!-- Columna 1 -->
-                        <div class="comp-category">
-                            <h3>Gestión & Estrategia</h3>
-                            <ul class="comp-list">
-                                <li>Design Project Management</li>
-                                <li>Dirección de Arte & Conceptualización</li>
-                                <li>Estrategia de Comunicación Visual</li>
-                                <li>Coherencia Narrativa & Storytelling</li>
-                                <li>Design Thinking</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Columna 2 -->
-                        <div class="comp-category">
-                            <h3>Dominio Técnico & Creativo</h3>
-                            <ul class="comp-list">
-                                <li>Branding e Identidad Visual</li>
-                                <li>Diseño Digital & Social Media</li>
-                                <li>Diseño Multimedia (Video/Audio/Interactividad)</li>
-                                <li>Motion Graphics & Animación</li>
-                                <li>Herramientas de IA</li>
-                                <li>Fotografía & Retoque Digital</li>
-                                <li>Ilustración 2D y 3D</li>
-                            </ul>
-                        </div>
+        <!-- 3. EXPLORACIÓN IA -->
+        <section id="exploracion">
+            <h2>Exploración Generativa</h2>
+            <p>Utilizando <strong>Gemini</strong> como asistente de <em>Prompt Engineering</em>, desarrollé descripciones técnicas precisas para guiar la generación de imágenes y variaciones de fondo en herramientas como <strong>Recraft</strong> y <strong>KREA</strong>.</p>
+            <p>El objetivo fue explorar paletas de colores y atmósferas que transitaran desde lo luminoso y celestial hasta lo misterioso y nocturno, manteniendo siempre la coherencia con la marca.</p>
 
-                        <!-- Columna 3 -->
-                        <div class="comp-category">
-                            <h3>Metodología</h3>
-                            <ul class="comp-list">
-                                <li>Visión Sistémica (Procesos completos)</li>
-                                <li>Análisis Riguroso & Criterio Estético</li>
-                                <li>Resolución de Problemas</li>
-                                <li>Adaptabilidad & Autonomía</li>
-                            </ul>
-                        </div>
-
-                    </div>
+            <div class="image-grid">
+                <!-- Fila 1 -->
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/image-gen.png" alt="Generación KREA">
+                    <div class="caption">Variación (KREA AI)</div>
                 </div>
-            </section>
-
-            <!-- 2.5 TOOLKIT DIGITAL & SOFTWARE -->
-            <section id="toolkit">
-                <h2>Toolkit Digital & Software</h2>
-                <div class="content">
-                    <div class="toolkit-grid">
-                        
-                        <div class="toolkit-level">
-                            <h3>Nivel Avanzado | Adobe Creative Suite</h3>
-                            <p class="toolkit-desc">Dominio para flujos de trabajo profesionales en diseño y postproducción.</p>
-                            <ul class="tool-items">
-                                <li>✦ Photoshop</li>
-                                <li>✦ Illustrator</li>
-                                <li>✦ InDesign</li>
-                                <li>✦ After Effects</li>
-                                <li>✦ Premiere Pro</li>
-                            </ul>
-                        </div>
-
-                        <div class="toolkit-level">
-                            <h3>Nivel Intermedio | Creación Específica</h3>
-                            <p class="toolkit-desc">Herramientas para ilustración, modelado móvil y edición ágil.</p>
-                            <ul class="tool-items">
-                                <li>✦ Canva (Presentaciones & Colaboración)</li>
-                                <li>✦ Procreate (Ilustración Digital)</li>
-                                <li>✦ Nomad Sculpt (Esculpido 3D en iPad)</li>
-                                <li>✦ CapCut (Edición Social Media)</li>
-                            </ul>
-                        </div>
-
-                        <div class="toolkit-level">
-                            <h3>Nivel Básico | Exploración & Prototipado</h3>
-                            <p class="toolkit-desc">Conocimientos funcionales para integración de nuevos medios.</p>
-                            <ul class="tool-items">
-                                <li>✦ Unreal Engine (Entornos 3D)</li>
-                                <li>✦ Figma (Diseño UI/UX)</li>
-                            </ul>
-                        </div>
-
-                    </div>
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_RECRAFT.png" alt="Generación Recraft">
+                    <div class="caption">Variación (Recraft)</div>
                 </div>
-            </section>
 
-            <!-- 3. EXPERIENCIA PROFESIONAL -->
-            <section id="experiencia">
-                <h2>Experiencia Profesional</h2>
-                <div class="content">
-                    
-                    <!-- SDE -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Design Project Manager</h3>
-                            <span class="institution">Santiago Design Experience (SDE)</span>
-                            <div class="description">
-                                <p><strong>Gestión Estratégica:</strong> Liderazgo y visión global de proyectos creativos, asegurando que el objetivo del cliente se traduzca en una ejecución visual coherente y de alto impacto.</p>
-                                <p><strong>Orquestación de Flujos:</strong> Planificación y validación de entregables, actuando como enlace estratégico entre el cliente y el equipo de diseño.</p>
-                            </div>
-                        </div>
-                        <span class="date">Jun 2025 – Presente</span>
-                    </article>
-
-                    <!-- Urimusic -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Lead Designer & Coordinadora Visual (Giras LATAM)</h3>
-                            <span class="institution">Urimusic Entertainment</span>
-                            <div class="description">
-                                <p>Liderazgo integral de campañas visuales y experiencias para giras de artistas de K-pop en Chile, Brasil, México y Perú.</p>
-                                <ul>
-                                    <li><strong>Eventos:</strong> Fanmeetings 'IN LOVE' (Hwang In Youp) y 'OUR TIME' (Jung Hae In); Conciertos 'Luck Inside 7 Doors' (Dreamcatcher) y 'About Damn Time' (pH-1).</li>
-                                    <li><strong>Diseño 360°:</strong> Desarrollo de ecosistemas completos: campañas digitales, assets para ticketeras, gran formato, señalética y diseño de merchandising oficial.</li>
-                                    <li><strong>Coordinación Internacional:</strong> Adaptación de normativas gráficas por país, garantizando coherencia estética y estándares de calidad global.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <span class="date">Abr 2023 – Mar 2025</span>
-                    </article>
-
-                    <!-- Independiente -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Consultora Creativa & Diseñadora Multidisciplinar</h3>
-                            <span class="institution">Profesional Independiente</span>
-                            <div class="description">
-                                <p>Gestión autónoma de identidad visual y contenido para el sector cultural y musical. Desarrollo multidisciplinario (foto, video, ilustración 2D/3D) adaptable a diversas plataformas.</p>
-                            </div>
-                        </div>
-                        <span class="date">Jun 2019 – Presente</span>
-                    </article>
-
-                    <!-- PROYECTOS DESTACADOS -->
-                    <h3 style="margin-top: 20px; font-size: 0.9rem; text-transform: uppercase; color: #555; border-bottom: 1px solid #eee; padding-bottom: 5px;">Proyectos Destacados & Innovación</h3>
-
-                    <!-- CRTIC AR -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Diseñadora AR (Realidad Aumentada)</h3>
-                            <span class="institution">CRTIC - Congreso Futuro</span>
-                            <div class="description">
-                                <p>Diseño y programación de filtros y experiencias inmersivas para la exhibición “SinfonIA Digital”.</p>
-                            </div>
-                        </div>
-                        <span class="date">Dic 2023 – Ene 2024</span>
-                    </article>
-
-                    <!-- Cherry Pop -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Realizadora Audiovisual & Contenido</h3>
-                            <span class="institution">Cherry Pop / All Dance Int.</span>
-                            <div class="description">
-                                <p>Producción de contenido dinámico para redes sociales y cobertura de eventos en vivo.</p>
-                            </div>
-                        </div>
-                        <span class="date">2021 – 2024</span>
-                    </article>
-
-                    <!-- Vitacura -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Diseñadora Gráfica (Práctica Profesional)</h3>
-                            <span class="institution">Municipalidad de Vitacura - Dir. Asesoría Urbana</span>
-                            <div class="description">
-                                <p>Diseño de gráficas de difusión y creación visual de la campaña educativa sobre ciclo-inclusión: “Somos Parte”.</p>
-                            </div>
-                        </div>
-                        <span class="date">2020</span>
-                    </article>
-
-                    <!-- NoiX -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Staff de Producción en Terreno</h3>
-                            <span class="institution">NoiX Entertainment</span>
-                            <div class="description">
-                                <p>Soporte logístico y operativo en eventos masivos (Music Bank Chile, NCT 127), asegurando el correcto flujo de la experiencia en el recinto.</p>
-                            </div>
-                        </div>
-                        <span class="date">2022 – 2023</span>
-                    </article>
-
+                <!-- Fila 2: FULL WIDTH -->
+                <div class="image-item span-full">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_kzgjdtkzgjdtkzgj.png" alt="Generación Gemini">
+                    <div class="caption">Exploración de múltiples opciones (Gemini)</div>
                 </div>
-            </section>
 
-            <!-- 4. DOCENCIA & ACADEMIA -->
-            <section id="docencia">
-                <h2>Docencia & Academia</h2>
-                <div class="content">
-                    
-                    <!-- FAU -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Ayudante de Cátedra & Guía de Proyectos</h3>
-                            <span class="institution">Facultad de Arquitectura y Urbanismo (FAU) - U. de Chile</span>
-                            <div class="description">
-                                <p>Acompañamiento académico a estudiantes de ciclo avanzado (3er y 4to año) en el desarrollo de proyectos de diseño, bajo la cátedra del Prof. Rodrigo Dueñas.</p>
-                                <ul>
-                                    <li><strong>Cursos:</strong> Taller de Proyecto VII (Mención Visualidad y Medios) y Diseño Editorial.</li>
-                                    <li><strong>Rol:</strong> Guía en procesos de investigación, conceptualización y formalización. Fomento del pensamiento crítico y la coherencia narrativa.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <span class="date">2023 – 2025</span>
-                    </article>
-
-                    <!-- CRTIC Docencia -->
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Instructora de Tecnologías Inmersivas (Meta Spark)</h3>
-                            <span class="institution">Centro para la Revolución Tecnológica en Industrias Creativas (CRTIC)</span>
-                            <div class="description">
-                                <p><strong>Rol:</strong> Docente del "Programa de Formación en Meta Spark: AR Fundamentals".</p>
-                                <p><strong>Impacto:</strong> Capacitación técnica en Realidad Aumentada y diseño de filtros para Instagram, enfocada en la aplicación de nuevas herramientas digitales para potenciar la comunicación en industrias creativas.</p>
-                            </div>
-                        </div>
-                        <span class="date">2023</span>
-                    </article>
-
+                <!-- Fila 3 -->
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_9a2ugg9a2ugg9a2u.png" alt="Generación Gemini">
+                    <div class="caption">Extensión de propuesta (Gemini)</div>
                 </div>
-            </section>
-
-            <!-- 5. FORMACIÓN (Académica + Continua) -->
-            <section id="formacion">
-                <h2>Formación</h2>
-                <div class="content">
-                    
-                    <!-- Académica -->
-                    <h3 style="margin-bottom: 15px; font-size: 0.95rem; color: #777;">ACADÉMICA</h3>
-                    
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Diseñadora Gráfica (Licenciada en Diseño)</h3>
-                            <span class="institution">Universidad de Chile</span>
-                            <div class="description">Titulada con Distinción Máxima, Mención Gráfica.</div>
-                        </div>
-                        <span class="date">2016 – 2022</span>
-                    </article>
-
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Ingeniería Comercial (Estudios de Pregrado)</h3>
-                            <span class="institution">Universidad Técnica Federico Santa María, Valparaíso</span>
-                            <div class="description">Formación en fundamentos de economía, administración y cálculo, aportando una base lógica y estructurada a la gestión de proyectos creativos.</div>
-                        </div>
-                        <span class="date">2013 – 2014</span>
-                    </article>
-
-                    <!-- Continua -->
-                    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 0.95rem; color: #777;">CONTINUA</h3>
-
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Programa de Formación: Unreal Engine Fundamentals</h3>
-                            <span class="institution">Centro para la Revolución Tecnológica en Industrias Creativas (CRTIC)</span>
-                            <div class="description">Capacitación técnica en motores de renderizado en tiempo real y entornos virtuales.</div>
-                        </div>
-                        <span class="date">2023</span>
-                    </article>
-
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Programa de Formación: Meta Spark AR Fundamentals</h3>
-                            <span class="institution">Centro para la Revolución Tecnológica en Industrias Creativas (CRTIC)</span>
-                            <div class="description">Especialización en creación de efectos y filtros de Realidad Aumentada para plataformas sociales.</div>
-                        </div>
-                        <span class="date">2023</span>
-                    </article>
-
-                    <article class="entry">
-                        <div class="entry-main">
-                            <h3>Gestión de Públicos y Comunidades Culturales</h3>
-                            <span class="institution">Ministerio de las Culturas, las Artes y el Patrimonio (MinCAP)</span>
-                            <div class="description">Ciclo de talleres de la Escuela de Gestión de Públicos, enfocado en estrategias de desarrollo de audiencias y mediación cultural.</div>
-                        </div>
-                        <span class="date">2022</span>
-                    </article>
-
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_5dvwn75dvwn75dvw.png" alt="Generación Gemini">
+                    <div class="caption">Extensión de propuesta (Gemini)</div>
                 </div>
-            </section>
 
-        </main>
-    </div>
+                <!-- Fila 4 -->
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_ae253gae253gae25.1.png" alt="Generación Gemini">
+                    <div class="caption">Extensión de propuesta (Gemini)</div>
+                </div>
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_19vxa319vxa319vx.1.png" alt="Generación Gemini">
+                    <div class="caption">Imagen Seleccionada (Gemini)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. RESULTADO FINAL -->
+        <section id="resultados">
+            <h2>Resultado Final (The Output)</h2>
+            <p>La etapa final consistió en dotar de movimiento a estas composiciones para potenciar la sensación onírica. Se utilizaron flujos distintos para cada formato:</p>
+            
+            <div class="video-container">
+                <!-- Video Vertical -->
+                <div class="video-wrapper" style="max-width: 350px;">
+                    <!-- Usamos una captura del video como poster -->
+                    <video controls poster="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_4475.JPEG">
+                        <source src="https://github.com/user-attachments/assets/f3ab056d-99de-42c4-92ab-84a94dedf459" type="video/mp4">
+                    </video>
+                    <div class="caption">Formato 9:16 (Animado con AI VideoGen Beta de Envato)</div>
+                </div>
+
+                <!-- Video Horizontal -->
+                <div class="video-wrapper">
+                    <!-- Usamos una captura del video como poster -->
+                    <video controls poster="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_19vxa319vxa319vx.1.png">
+                        <source src="https://github.com/user-attachments/assets/8e73f099-d7a8-4bce-be9f-925bb67996b4" type="video/mp4">
+                    </video>
+                    <div class="caption">Formato 16:9 (Animado con Gemini Veo 3)</div>
+                </div>
+            </div>
+
+            <!-- Conclusión del Proyecto -->
+            <div style="margin-top: 60px; padding: 30px; border: 1px solid #333; border-radius: 8px; background-color: #0a0a0a;">
+                <h3 style="font-size: 1.2rem; font-weight: 600; color: #fff; margin-bottom: 15px;">Conclusión del Proyecto</h3>
+                <p style="font-style: italic; color: #E0E0E0; font-size: 1.15rem; margin-bottom: 0;">
+                    "Este ejercicio valida un flujo de trabajo donde la IA no reemplaza al producto, sino que lo contextualiza. Logré crear una campaña de alto impacto visual sin necesidad de sets físicos costosos, manteniendo el control total sobre la dirección de arte y la narrativa de marca."
+                </p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <span class="footer-name">Yi Saint-Jour</span>
+            <div class="footer-links">
+                <a href="mailto:yi.creativa@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/yyyi" target="_blank">LinkedIn</a>
+                <a href="https://www.behance.net/yyyi" target="_blank">Behance</a>
+            </div>
+            <div class="ai-credit">
+                Sitio desarrollado con asistencia de Gemini
+            </div>
+        </footer>
+
+    </main>
 
     <!-- Botón Volver Arriba -->
     <button onclick="topFunction()" id="scrollTopBtn" title="Volver al inicio" aria-label="Volver arriba">
@@ -797,16 +495,17 @@
             document.documentElement.scrollTop = 0;
         }
 
-        // --- SIDEBAR ACTIVO (NUEVO) ---
+        // --- SIDEBAR ACTIVO ---
         function highlightSidebar() {
             const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".toc-link");
+            const navLinks = document.querySelectorAll(".nav-link");
 
             let current = "";
 
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) { // Ajuste para que se active antes de llegar
+                // Ajuste para que se active antes de llegar
+                if (window.scrollY >= sectionTop - 150) { 
                     current = section.getAttribute("id");
                 }
             });
