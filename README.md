@@ -2,7 +2,7 @@
 
 https://github.com/user-attachments/assets/f3ab056d-99de-42c4-92ab-84a94dedf459
 
-
-
 https://github.com/user-attachments/assets/8e73f099-d7a8-4bce-be9f-925bb67996b4
 
+<img width="954" height="530" alt="Captura de pantalla 2025-12-21 a la(s) 10 21 48 p m" src="https://github.com/user-attachments/assets/7c1c89d4-9efe-490c-a4a8-0a3e7b73117b" />
+<img width="558" height="992" alt="Captura de pantalla 2025-12-21 a la(s) 10 21 26 p m" src="https://github.com/user-attachments/assets/9a9b02bd-4bd9-46b7-9de0-6198ad03f108" />
