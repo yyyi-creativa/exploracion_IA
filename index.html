@@ -124,6 +124,14 @@
             padding-left: 15px;
         }
 
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
         p {
             margin-bottom: 20px;
             font-weight: 300;
@@ -144,6 +152,14 @@
         .image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr; /* 2 columnas fijas en escritorio */
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        /* Clase especial para la grilla de 3 elementos en Proceso */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
             gap: 20px;
             margin-top: 40px;
         }
@@ -230,7 +246,6 @@
             justify-content: center;
             gap: 20px;
             margin-bottom: 20px;
-            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -324,6 +339,9 @@
             .image-grid {
                 grid-template-columns: 1fr;
             }
+            .image-grid-3 {
+                grid-template-columns: 1fr; /* Colapsa a 1 columna en móvil */
+            }
             .span-full {
                 grid-column: auto;
             }
@@ -342,10 +360,11 @@
     <!-- SIDEBAR DE NAVEGACIÓN -->
     <nav class="sidebar">
         <ul class="nav-list">
-            <li class="nav-item"><a href="#intro" class="nav-link">El Desafío</a></li>
+            <li class="nav-item"><a href="#intro" class="nav-link">Introducción</a></li>
             <li class="nav-item"><a href="#proceso" class="nav-link">Proceso</a></li>
             <li class="nav-item"><a href="#exploracion" class="nav-link">Exploración IA</a></li>
             <li class="nav-item"><a href="#resultados" class="nav-link">Resultados</a></li>
+            <li class="nav-item"><a href="#conclusiones" class="nav-link">Conclusiones</a></li>
             <li class="nav-item"><a href="#footer" class="nav-link">Contacto</a></li>
         </ul>
     </nav>
@@ -353,52 +372,61 @@
     <main>
         
         <header id="top">
-            <h1>Ecosistemas Oníricos</h1>
-            <p class="subtitle">Exploración de Entornos 3D y Animación con IA Generativa</p>
+            <h1>Exploración y Animación con IA Generativa</h1>
+            <p class="subtitle">Proyecto personal</p>
             <div class="tools">
-                <span class="tool-tag">Gemini (Veo 3)</span>
+                <span class="tool-tag">Gemini (Veo 3.1)</span>
                 <span class="tool-tag">Recraft</span>
                 <span class="tool-tag">KREA AI</span>
                 <span class="tool-tag">Envato (AI VideoGen)</span>
                 <span class="tool-tag">Nomad Sculpt</span>
-                <span class="tool-tag">Fotografía</span>
             </div>
         </header>
 
         <!-- 1. INTRODUCCIÓN -->
         <section id="intro">
-            <h2>El Desafío Creativo</h2>
-            <p>Este proyecto nace de la inquietud por fusionar lo tangible con lo digital. El objetivo fue crear una serie de piezas audiovisuales que evocaran una atmósfera etérea y mágica, integrando la materialidad de la artesanía tradicional con las posibilidades infinitas de la generación de entornos mediante IA.</p>
-            <p><strong>La Premisa:</strong> Unir la fotografía de una pieza física (modelada en cera) con un entorno 3D digital, logrando una cohesión estética perfecta en cuanto a iluminación, textura y movimiento.</p>
+            <h2>Introducción: Hibridación creativa</h2>
+            <h3>De lo tangible a lo sintético</h3>
+            <p>Este proyecto explora la intersección entre la materialidad de la artesanía tradicional y las posibilidades infinitas de los entornos generativos. El objetivo fue desarrollar una serie de piezas audiovisuales que evocaran una atmósfera etérea y mágica, tomando como punto de partida una referencia estética específica.</p>
+            <p><strong>La premisa central:</strong> Fusionar el registro fotográfico de una pieza física —un modelo en cera con volumen real— con atmósferas digitales creadas por IA, buscando una cohesión visual absoluta en iluminación, textura y narrativa onírica.</p>
         </section>
 
         <!-- 2. PROCESO -->
         <section id="proceso">
-            <h2>De la Cera al Pixel</h2>
-            <p>El punto de partida fue la creación de dos activos fundamentales:</p>
+            <h2>Proceso</h2>
+            <p>El flujo de trabajo se estructuró a partir de la recopilación y fusión de tres activos fundamentales:</p>
             <ul>
-                <li><strong>La Pieza Física:</strong> Fotografía de estudio de una joya original modelada en cera, capturando su textura y volumen real.</li>
-                <li><strong>El Entorno Digital:</strong> Creación de un escenario base en 3D, diseñado para servir como el lienzo atmosférico de la composición.</li>
+                <li><strong>El activo físico:</strong> Registro fotográfico directo de una pieza original modelada en cera, preservando sus imperfecciones, texturas y volumetría real.</li>
+                <li><strong>El entorno digital:</strong> Escenario 3D base que actúa como soporte atmosférico de la composición.</li>
+                <li><strong>El referente estético:</strong> Análisis visual de la identidad seleccionada para decodificar sus claves estilísticas: materialidad metálica (plata), atmósfera etérea y morfología bio-orgánica.</li>
             </ul>
-            <p>El desafío central fue la integración. Mediante técnicas de composición digital, uní ambos elementos buscando una estética específica: etérea, mágica, con un toque de oscuridad angelical.</p>
             
-            <div class="image-grid">
+            <!-- Grilla de 3 columnas para los activos -->
+            <div class="image-grid-3">
                 <div class="image-item">
                     <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_4475.JPEG" alt="Pieza modelada en cera">
-                    <div class="caption">Asset 1: Pieza Física (Cera)</div>
+                    <div class="caption">1. Activo Físico (Cera)</div>
                 </div>
                 <div class="image-item">
                     <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_1947.png" alt="Entorno 3D">
-                    <div class="caption">Asset 2: Entorno 3D Base</div>
+                    <div class="caption">2. Entorno Digital Base</div>
+                </div>
+                <div class="image-item">
+                    <img src="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/image-gen.jpg" alt="Imagen de Referencia Estilo tttravesuras">
+                    <div class="caption">3. Referente Estético</div>
                 </div>
             </div>
+
+            <h3>El desafío: precisión generativa e iteración</h3>
+            <p>El reto central radicó en la generación pura. A diferencia de un montaje tradicional, no se recurrió a postproducción para integrar los elementos. La complejidad estuvo en el proceso iterativo: fue necesario refinar exhaustivamente los prompts y parámetros para conseguir que la herramienta generara una fusión orgánica desde el origen.</p>
+            <p>Se realizaron múltiples pruebas hasta lograr que la IA interpretara correctamente la alineación estética buscada —etérea, mágica y con matices de oscuridad sofisticada—, consiguiendo así que la pieza física y el entorno digital convivieran en la imagen final sin necesidad de retoques posteriores.</p>
         </section>
 
         <!-- 3. EXPLORACIÓN IA -->
         <section id="exploracion">
-            <h2>Exploración Generativa</h2>
-            <p>Utilizando <strong>Gemini</strong> como asistente de <em>Prompt Engineering</em>, desarrollé descripciones técnicas precisas para guiar la generación de imágenes y variaciones de fondo en herramientas como <strong>Recraft</strong> y <strong>KREA</strong>.</p>
-            <p>El objetivo fue explorar paletas de colores y atmósferas que transitaran desde lo luminoso y celestial hasta lo misterioso y nocturno, manteniendo siempre la coherencia con la marca.</p>
+            <h2>Exploración IA</h2>
+            <p><strong>Exploración generativa:</strong> Utilizando Gemini como asistente de prompt, desarrollé descripciones para guiar la generación de imágenes y variaciones de fondo, integrando un ecosistema de herramientas: Recraft, KREA, Gemini (Veo 3.1) y Envato (AI VideoGen).</p>
+            <p>El objetivo fue explorar atmósferas que transitaran desde lo luminoso y celestial hasta lo misterioso y nocturno, manteniendo siempre la coherencia con el referente estético.</p>
 
             <div class="image-grid">
                 <!-- Fila 1 -->
@@ -441,14 +469,15 @@
 
         <!-- 4. RESULTADO FINAL -->
         <section id="resultados">
-            <h2>Resultado Final (The Output)</h2>
+            <h2>Resultado Final</h2>
+            <h3>Contextualización dinámica</h3>
             <p>La etapa final consistió en dotar de movimiento a estas composiciones para potenciar la sensación onírica. Se utilizaron flujos distintos para cada formato:</p>
             
             <div class="video-container">
                 <!-- Video Vertical -->
                 <div class="video-wrapper" style="max-width: 350px;">
                     <!-- Usamos una captura del video como poster -->
-                    <video controls poster="https://github.com/user-attachments/assets/7c1c89d4-9efe-490c-a4a8-0a3e7b73117b">
+                    <video controls poster="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/IMG_4475.JPEG">
                         <source src="https://github.com/user-attachments/assets/f3ab056d-99de-42c4-92ab-84a94dedf459" type="video/mp4">
                     </video>
                     <div class="caption">Formato 9:16 (Animado con AI VideoGen Beta de Envato)</div>
@@ -457,19 +486,20 @@
                 <!-- Video Horizontal -->
                 <div class="video-wrapper">
                     <!-- Usamos una captura del video como poster -->
-                    <video controls poster="ttps://github.com/user-attachments/assets/9a9b02bd-4bd9-46b7-9de0-6198ad03f108">
+                    <video controls poster="https://raw.githubusercontent.com/yyyi-creativa/imgs/refs/heads/main/Gemini_Generated_Image_19vxa319vxa319vx.1.png">
                         <source src="https://github.com/user-attachments/assets/8e73f099-d7a8-4bce-be9f-925bb67996b4" type="video/mp4">
                     </video>
                     <div class="caption">Formato 16:9 (Animado con Gemini Veo 3)</div>
                 </div>
             </div>
+        </section>
 
-            <!-- Conclusión del Proyecto -->
-            <div style="margin-top: 60px; padding: 30px; border: 1px solid #333; border-radius: 8px; background-color: #0a0a0a;">
-                <h3 style="font-size: 1.2rem; font-weight: 600; color: #fff; margin-bottom: 15px;">Conclusión del Proyecto</h3>
-                <p style="font-style: italic; color: #E0E0E0; font-size: 1.15rem; margin-bottom: 0;">
-                    "Este ejercicio valida un flujo de trabajo donde la IA no reemplaza al producto, sino que lo contextualiza. Logré crear una campaña de alto impacto visual sin necesidad de sets físicos costosos, manteniendo el control total sobre la dirección de arte y la narrativa de marca."
-                </p>
+        <!-- 5. CONCLUSIONES -->
+        <section id="conclusiones">
+            <div style="padding: 30px; border: 1px solid #333; border-radius: 8px; background-color: #0a0a0a;">
+                <h3 style="margin-top: 0;">Conclusiones</h3>
+                <p>Este ejercicio valida un flujo de trabajo donde la IA no reemplaza al objeto, sino que lo contextualiza y eleva. Se logró integrar un asset inicial de registro casero en el universo del referente estético, dotándolo de atmósfera y movimiento.</p>
+                <p style="margin-bottom: 0;">Cabe destacar la agilidad del proceso: el proyecto fue ejecutado íntegramente durante una tarde de exploración. Respecto a las herramientas, se trabajó con los recursos disponibles al momento; si bien hoy existen flujos más avanzados en plataformas como Higgsfield, Freepik o Flora que permitirían resultados superiores, estas requieren suscripciones de pago. Este ejercicio demuestra que es posible generar conceptos visuales de alto impacto optimizando el uso de herramientas de acceso libre.</p>
             </div>
         </section>
 
