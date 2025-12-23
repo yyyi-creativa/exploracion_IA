@@ -366,6 +366,25 @@
                 width: 45px;
                 height: 45px;
             }
+            /* ... existing code ... */
+        .ai-credit {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .visit-counter {
+            font-variant-numeric: tabular-nums; /* Evita que los números salten al cambiar */
+        }
+        
+        .separator {
+            opacity: 0.5;
+        }
+        /* ... existing code ... */
         }
     </style>
 </head>
@@ -594,6 +613,32 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
+    <script>
+        // --- CONTADOR DE VISITAS ---
+        // Usamos una clave única basada en tu dominio para que sea persistente
+        const namespace = 'yyyi-creativa.github.io';
+        const key = 'ecosistemas-oniricos-views';
 
+        // Función para obtener y mostrar las visitas
+        function updateCounter() {
+            const counterElement = document.getElementById('visit-counter');
+            
+            // Llamada a la API de countapi.xyz
+            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+                .then(response => response.json())
+                .then(data => {
+                    counterElement.innerText = `Visitas: ${data.value}`;
+                })
+                .catch(err => {
+                    console.error('Error al cargar el contador', err);
+                    counterElement.innerText = 'Visitas: --';
+                });
+        }
+
+        // Ejecutar al cargar
+        document.addEventListener('DOMContentLoaded', updateCounter);
+
+        // ... (resto de tu script existente) ...
+    </script>
 </body>
 </html>
