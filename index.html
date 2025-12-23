@@ -45,59 +45,51 @@
             display: flex; /* Layout principal con flexbox */
         }
 
-      /* --- BARRA LATERAL (SIDEBAR) --- */
-            .sidebar {
-                width: 250px; /* Ancho fijo */
-                height: 100vh; /* Altura completa de la ventana */
-                position: sticky; /* Se queda pegada al hacer scroll */
-                top: 0;
-                background-color: #0a0a0a; /* Fondo un poco más claro que el body */
-                border-right: 1px solid #333;
-                padding: 40px 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center; /* Centrado vertical */
-            }
-            
-            .nav-list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-            
-            .nav-item {
-                margin-bottom: 15px;
-            }
-            
-            .nav-link {
-                text-decoration: none;
-                color: #888; /* Color inactivo */
-                font-size: 0.9rem;
-                transition: color 0.3s, padding-left 0.3s;
-                display: block;
-                border-left: 2px solid transparent;
-                padding-left: 10px;
-            }
-            
-            .nav-link:hover {
-                color: #fff;
-                padding-left: 15px;
-            }
-            
-            /* Estado Activo (Se aplica con JS) */
-            .nav-link.active {
-                color: #fff;
-                border-left: 2px solid #fff; /* Línea indicadora */
-                padding-left: 15px;
-                font-weight: 600;
-            }
-            
-            /* Ocultar en Móvil */
-            @media (max-width: 900px) {
-                .sidebar {
-                    display: none;
-                }
-            }        
+        /* --- BARRA LATERAL (SIDEBAR) --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background-color: #0a0a0a;
+            border-right: 1px solid #333;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            transition: color 0.3s, padding-left 0.3s;
+            display: block;
+            border-left: 2px solid transparent;
+            padding-left: 10px;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            padding-left: 15px;
+        }
+
+        .nav-link.active {
+            color: #fff;
+            border-left: 2px solid #fff;
+            padding-left: 15px;
+            font-weight: 600;
+        }
 
 
         /* --- CONTENIDO PRINCIPAL --- */
@@ -562,8 +554,7 @@
 
     <script>
         // --- NAVEGACIÓN ACTIVA EN SCROLL ---
-        // --- NAVEGACIÓN ACTIVA EN SCROLL ---
-        const sections = document.querySelectorAll('section, footer'); // Incluye el footer
+        const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
         window.addEventListener('scroll', () => {
@@ -572,22 +563,16 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-        
-        // La magia ocurre aquí: 
-        // Si hemos scrolleado más allá del inicio de la sección (menos un margen de 200px)
-        if (scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        // Si el link apunta a la sección actual, actívalo
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
-    });
-});
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
             });
             
             scrollFunction(); // Llamamos también a la función del botón
